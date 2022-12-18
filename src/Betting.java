@@ -9,5 +9,7 @@ public class Betting {
 
         System.out.println(1.0 + (double) p2 / p1);
         System.out.println(1.0 + (double) p1 / p2);   
+
+        stdin.close();
     }
 }

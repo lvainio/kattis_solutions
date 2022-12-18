@@ -15,5 +15,6 @@ public class GCVWR {
         }
 
         System.out.println((int) tot);
+        stdin.close();
     }
 }
