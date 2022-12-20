@@ -12,18 +12,18 @@ int main() {
         cin >> bus_numbers[i];
     }
     sort(bus_numbers, bus_numbers + n);
-    
+
     for (int i = 0; i < n; i++) {
-        if (i >= n-2) { // one or two left
+        if (i >= n-2) {
             cout << bus_numbers[i] << " ";
 
-        } else if (bus_numbers[i] != bus_numbers[i+1] - 1) { // case 1 (out of bounds on i=n-1)
+        } else if (bus_numbers[i] != bus_numbers[i+1] - 1) {
             cout << bus_numbers[i] << " ";
         
-        } else if (bus_numbers[i+1] != bus_numbers[i+2] - 1) { // case 2 (out of bounds on i=n-2)
+        } else if (bus_numbers[i+1] != bus_numbers[i+2] - 1) {
             cout << bus_numbers[i] << " ";
 
-        } else { // case 3 (atleast 3 consecutive bus numbers)
+        } else {
             int last = i;
             for (int j = i; j < n-1; j++) {
                 if (bus_numbers[j] != bus_numbers[j+1]-1) {
@@ -31,7 +31,8 @@ int main() {
                 }
                 last++;
             }
-            cout << i << "-" << last << " ";
+            cout << bus_numbers[i] << "-" << bus_numbers[last] << " ";
+            i = last;
         }
     }
     return 0;
